@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { RefreshCw, Shuffle, Image as ImageIcon, Eye, EyeOff, TimerReset } from "lucide-react";
+import { RefreshCw, Shuffle, Image as ImageIcon, EyeOff, TimerReset } from "lucide-react";
 import { motion } from "framer-motion";
 import img1 from "../app/images/xephinh1.jpg"
 import img2 from "../app/images/xephinh2.1.jpg"
@@ -58,7 +58,7 @@ export default function JigsawGame() {
   const [pieces, setPieces] = useState([]);
   const [dragId, setDragId] = useState(null);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
-  const [showPreview, setShowPreview] = useState(true);
+  // const [showPreview, setShowPreview] = useState(true);
   const [moves, setMoves] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [running, setRunning] = useState(false);
@@ -235,11 +235,10 @@ export default function JigsawGame() {
                 onBlur={(e) => setImgUrl(e.target.value)}
               />
               <button
-                onClick={() => setShowPreview((s) => !s)}
+                // onClick={() => setShowPreview(!showPreview)}
                 className="px-3 py-2 rounded-lg border flex items-center gap-2"
               >
-                {showPreview ? <EyeOff size={16} /> : <Eye size={16} />}
-                {showPreview ? "Hide img" : "Show img"}
+                 <EyeOff size={16} /> Hide img
               </button>
             </div>
             <div className="flex gap-2 mt-2 flex-wrap">
@@ -340,7 +339,7 @@ export default function JigsawGame() {
             className="mx-auto relative"
             style={{ width: boardSize, height: boardSize }}
           >
-            {showPreview && (
+
               <div
                 className="absolute inset-0 rounded-2xl"
                 style={{
@@ -352,10 +351,9 @@ export default function JigsawGame() {
                   border: "1px solid rgba(0,0,0,0.08)",
                 }}
               />
-            )}
             {pieces.map((p) => (
               <Piece
-                key={p.id}
+              key={p.id}
                 piece={p}
                 boardSize={boardSize}
                 imgUrl={imgUrl}

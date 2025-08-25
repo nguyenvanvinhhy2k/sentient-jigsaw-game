@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  width: 100%;
+  color: var(--foreground);
+  height: 100%;
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 3D rotate y-axis */
+@layer utilities {
+  .rotate-y-0 {
+    transform: rotateY(0deg);
+  }
+  .-rotate-y-180 {
+    transform: rotateY(-180deg);
+  }
+  .perspective-\[1500px\] {
+    perspective: 1500px;
+  }
+}
+
+/* Ẩn scrollbar nhưng vẫn scroll được */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+  overflow: hidden; 
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE, Edge */
+  scrollbar-width: none;     /* Firefox */
+}

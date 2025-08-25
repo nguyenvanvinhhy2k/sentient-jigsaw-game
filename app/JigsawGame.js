@@ -7,7 +7,7 @@ import img3 from "../app/images/xephinh3.jpg"
 import img4 from "../app/images/xephinh4.jpg"
 
 // ---------- Utility helpers ----------
-const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
+// const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 // ---------- Piece component ----------

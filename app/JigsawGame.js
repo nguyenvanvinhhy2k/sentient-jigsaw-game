@@ -5,6 +5,8 @@ import img1 from "../app/images/xephinh1.jpg"
 import img2 from "../app/images/xephinh2.1.jpg"
 import img3 from "../app/images/xephinh3.jpg"
 import img4 from "../app/images/xephinh4.jpg"
+import logo from "../app/images/sentient-logo.jpg"
+
 
 // ---------- Utility helpers ----------
 // const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
@@ -216,13 +218,18 @@ export default function JigsawGame() {
   return (
     <div className="min-h-screen w-full  flex flex-col items-center justify-center">
       <div className="w-full max-w-6xl rounded-2xl shadow-xl bg-white p-6">
+      <div className="flex justify-between items-center">
+        <div>
         <h2 className="text-2xl font-bold mb-2">
           Jigsaw Puzzle – React Drag & Snap
         </h2>
+       
         <p className="text-sm text-gray-500 mb-4">
           Drag the puzzle pieces into the correct position to complete the picture. Images and number of rows/columns can be changed..
         </p>
-
+        </div>
+        <img src={logo.src} className="w-[5%] h-full object-cover hidden sm:block" />
+        </div>
         {/* Controls */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
           <div>
